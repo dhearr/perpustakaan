@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('writer');
             $table->string('publisher');
             $table->year('publication_year');
-            $table->integer('stock')->default(0);
+            $table->string('status')->default('Tersedia');
             $table->timestamps();
         });
     }

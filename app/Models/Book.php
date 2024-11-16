@@ -11,7 +11,7 @@ class Book extends Model
     use HasFactory;
 
     protected $table = 'books';
-    protected $fillable = ['title', 'writer', 'publisher', 'publication_year', 'stock'];
+    protected $fillable = ['title', 'writer', 'publisher', 'publication_year', 'status'];
 
     public function borrowing(): HasMany
     {

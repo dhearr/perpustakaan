@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Filament\Resources\BookResource\Pages;
+namespace App\Filament\Resources\MemberResource\Pages;
 
-use App\Filament\Resources\BookResource;
+use App\Filament\Resources\MemberResource;
 use Filament\Resources\Pages\EditRecord;
 
-class EditBook extends EditRecord
+class EditMember extends EditRecord
 {
-    protected static string $resource = BookResource::class;
+    protected static string $resource = MemberResource::class;
 
     protected function getRedirectUrl(): string
     {
@@ -16,6 +16,6 @@ class EditBook extends EditRecord
 
     protected function getSavedNotificationTitle(): ?string
     {
-        return 'Buku Berhasil Di Edit';
+        return 'Member Berhasil Di Edit';
     }
 }

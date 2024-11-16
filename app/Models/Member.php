@@ -11,7 +11,7 @@ class Member extends Model
     use HasFactory;
 
     protected $table = 'members';
-    protected $fillable = ['name', 'email', 'address', 'no_phone'];
+    protected $fillable = ['name', 'address', 'no_phone', 'gender'];
 
     public function borrowing(): HasMany
     {

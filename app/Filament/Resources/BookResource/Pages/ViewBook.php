@@ -3,18 +3,19 @@
 namespace App\Filament\Resources\BookResource\Pages;
 
 use App\Filament\Resources\BookResource;
-use Filament\Actions\CreateAction;
-use Filament\Resources\Pages\ListRecords;
+use Filament\Actions\Action;
+use Filament\Resources\Pages\ViewRecord;
 
-class ListBooks extends ListRecords
+class ViewBook extends ViewRecord
 {
     protected static string $resource = BookResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make()
-                ->icon('heroicon-o-plus')
+            Action::make('Back')
+                ->label('Back')
+                ->url($this->getResource()::getUrl('index'))
         ];
     }
 }
