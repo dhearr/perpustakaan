@@ -1,6 +1,22 @@
 # Laravel 11 + Filament + Tailwind CSS Application
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center">
+    <a href="https://laravel.com" target="_blank">
+        <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
+    </a>
+</p>
++
+<p align="center">
+    <a href="https://filamentphp.com" target="_blank">
+        <img src="https://raw.githubusercontent.com/filamentphp/filament/main/art/logo.svg" width="200" alt="Filament Logo">
+    </a>
+</p>
++
+<p align="center">
+    <a href="https://tailwindcss.com" target="_blank">
+        <img src="https://tailwindcss.com/_next/static/media/tailwindcss-logotype.7b978ada.svg" width="300" alt="Tailwind CSS Logo">
+    </a>
+</p>
 
 
 Selamat datang di aplikasi ini! Aplikasi ini dibangun menggunakan **Laravel 11**, **Filament** untuk admin panel, dan **Tailwind CSS** untuk styling front-end. Panduan ini akan membantu Anda untuk mengkloning dan menjalankan aplikasi ini di perangkat Anda.
