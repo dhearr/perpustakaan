@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\MemberResource\Pages;
 
-use App\Filament\Resources\MemberResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\MemberResource;
+use App\Filament\Resources\MemberResource\Widgets\StatsOverview;
 
 class ListMembers extends ListRecords
 {
@@ -17,4 +18,12 @@ class ListMembers extends ListRecords
                 ->icon('heroicon-o-plus')
         ];
     }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            StatsOverview::class,
+        ];
+    }
+
 }

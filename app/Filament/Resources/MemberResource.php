@@ -2,41 +2,48 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\MemberResource\Pages\CreateMember;
-use App\Filament\Resources\MemberResource\Pages\EditMember;
-use App\Filament\Resources\MemberResource\Pages\ListMembers;
-use App\Filament\Resources\MemberResource\Pages\ViewMember;
+use stdClass;
 use App\Models\Member;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Tables\Table;
+use Illuminate\Support\Str;
 use Filament\Resources\Resource;
-use Filament\Tables\Actions\BulkActionGroup;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Actions\DeleteBulkAction;
+use Filament\Forms\Components\Select;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\ViewAction;
-use Filament\Tables\Columns\BadgeColumn;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
+use Filament\Tables\Contracts\HasTable;
+use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\BadgeColumn;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\BulkActionGroup;
+use Filament\Tables\Actions\DeleteBulkAction;
+use App\Filament\Resources\MemberResource\Pages\ListMembers;
 
 class MemberResource extends Resource
 {
     protected static ?string $model = Member::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-user';
-    protected static ?string $navigationGroup = 'Library Management';
-    protected static ?int $navigationSort = 2;
+    protected static ?string $recordTitleAttribute = 'name';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
+    protected static ?string $navigationGroup = 'Member Management';
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                TextInput::make('name')->label('Nama')->required(),
-                TextInput::make('address')->label('Alamat')->required(),
-                TextInput::make('no_phone')->label('No Hanphone')->required(),
+                TextInput::make('name')
+                    ->required()
+                    ->afterStateUpdated(fn($state, callable $set) => $set('name', Str::title($state))),
+                TextInput::make('email')
+                    ->required(),
+                TextInput::make('address')
+                    ->helperText('Contoh: Jln. Perpustakaan No.123 Rt.45 Rw.67 Tasikmalaya Jawa Barat')
+                    ->required()
+                    ->afterStateUpdated(fn($state, callable $set) => $set('address', Str::title($state))),
+                TextInput::make('no_phone')->required(),
                 Select::make('gender')
-                    ->label('Jenis Kelamin')
                     ->options([
                         'laki-laki' => 'Laki-Laki',
                         'perempuan' => 'Perempuan'
@@ -48,11 +55,23 @@ class MemberResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')->label('Nama')->sortable()->searchable(),
-                TextColumn::make('address')->label('Alamat')->sortable()->searchable(),
-                TextColumn::make('no_phone')->label('No Hanphone')->sortable()->searchable(),
+                TextColumn::make('No')->state(
+                    static function (HasTable $livewire, stdClass $rowLoop): string {
+                        return (string) (
+                            $rowLoop->iteration +
+                            ($livewire->getTableRecordsPerPage() * (
+                                $livewire->getTablePage() - 1
+                            ))
+                        );
+                    }
+                )->sortable(),
+                TextColumn::make('name')->sortable()->searchable(),
+                TextColumn::make('email')->sortable()->searchable(),
+                TextColumn::make('address')->sortable()->searchable(),
+                TextColumn::make('no_phone')->sortable()->searchable(),
                 BadgeColumn::make('gender')
-                    ->label('Jenis Kelamin')
+                    ->sortable()
+                    ->searchable()
                     ->formatStateUsing(function ($state) {
                         return match ($state) {
                             'laki-laki' => 'Laki-Laki',
@@ -66,7 +85,7 @@ class MemberResource extends Resource
                     ->colors([
                         'info' => fn($state) => $state === 'laki-laki',
                         'pingky' => fn($state) => $state === 'perempuan',
-                    ])->sortable()->searchable(),
+                    ]),
             ])
             ->filters([
                 //
@@ -76,13 +95,13 @@ class MemberResource extends Resource
                     ->color('info'),
                 EditAction::make(),
                 DeleteAction::make()
-                    ->successNotificationTitle('Member berhasil dihapus')
             ])
             ->bulkActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultSort('created_at', 'desc');
     }
 
     public static function getRelations(): array
@@ -96,9 +115,6 @@ class MemberResource extends Resource
     {
         return [
             'index' => ListMembers::route('/'),
-            'create' => CreateMember::route('/create'),
-            'view' => ViewMember::route('/{record}'),
-            'edit' => EditMember::route('/{record}/edit'),
         ];
     }
 }

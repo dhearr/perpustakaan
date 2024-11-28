@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\BookResource\Pages;
 
 use App\Filament\Resources\BookResource;
+use App\Filament\Resources\BookResource\Widgets\StatsOverview;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
@@ -15,6 +16,13 @@ class ListBooks extends ListRecords
         return [
             CreateAction::make()
                 ->icon('heroicon-o-plus')
+        ];
+    }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            StatsOverview::class,
         ];
     }
 }

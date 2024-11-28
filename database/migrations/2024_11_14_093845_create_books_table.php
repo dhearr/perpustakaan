@@ -12,11 +12,12 @@ return new class extends Migration {
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('rack_id')->nullable()->constrained('racks')->onDelete('cascade');
             $table->string('title');
             $table->string('writer');
             $table->string('publisher');
             $table->year('publication_year');
-            $table->string('status')->default('Tersedia');
+            $table->string('status')->default('tersedia');
             $table->timestamps();
         });
     }

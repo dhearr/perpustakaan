@@ -13,9 +13,4 @@ class EditBook extends EditRecord
     {
         return $this->getResource()::getUrl('index');
     }
-
-    protected function getSavedNotificationTitle(): ?string
-    {
-        return 'Buku Berhasil Di Edit';
-    }
 }

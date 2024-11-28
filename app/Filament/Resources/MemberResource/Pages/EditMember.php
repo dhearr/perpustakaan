@@ -13,9 +13,4 @@ class EditMember extends EditRecord
     {
         return $this->getResource()::getUrl('index');
     }
-
-    protected function getSavedNotificationTitle(): ?string
-    {
-        return 'Member Berhasil Di Edit';
-    }
 }

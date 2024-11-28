@@ -15,8 +15,8 @@ return new class extends Migration {
             $table->foreignId('book_id')->constrained('books')->onDelete('cascade');
             $table->foreignId('member_id')->constrained('members')->onDelete('cascade');
             $table->date('date_loan');
-            $table->date('date_return')->nullable();
-            $table->integer('charge')->default(0);
+            $table->date('date_due')->nullable();
+            $table->string('status')->default('dipinjam');
             $table->timestamps();
         });
     }
