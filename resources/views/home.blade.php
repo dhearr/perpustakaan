@@ -26,7 +26,7 @@
             </p>
             <div class="mt-10 flex justify-center items-center gap-x-6 text-black lg:justify-start">
                 <a class="flex h-min items-center disabled:opacity-50 disabled:hover:opacity-50 hover:opacity-95 justify-center ring-none rounded-lg shadow-lg font-semibold py-2 px-4 font-dm focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-[rgb(59,130,246)] border-b-[rgb(27,61,116)] disabled:border-0 disabled:bg-[rgb(59,130,246)] disabled:text-white ring-white text-white border-b-4 hover:border-0 active:border-0 hover:text-gray-100 active:bg-[rgb(59,130,246)] active:text-gray-300 focus-visible:outline-[rgb(59,130,246)] text-sm sm:text-base"
-                    href="/register">
+                    href="/admin/register">
                     Create account
                 </a>
                 <a class="flex h-min items-center disabled:opacity-50 disabled:hover:opacity-50 hover:opacity-95 justify-center ring-none rounded-lg shadow-lg font-semibold py-2 px-4 font-dm focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-[rgb(59,130,246)] border-b-[rgb(27,61,116)] disabled:border-0 disabled:bg-[rgb(59,130,246)] disabled:text-white ring-white border-b-4 hover:border-0 active:border-0 active:bg-[rgb(59,130,246)] focus-visible:outline-[rgb(59,130,246)] text-sm sm:text-base"
