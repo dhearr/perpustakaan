@@ -1,4 +1,8 @@
-# Laravel 11 + Filament + Tailwind CSS Application
+<p align="center">
+  <img src="https://laravel.com/img/logomark.min.svg" alt="Laravel" height="50">
+  <img src="[https://filamentadmin.com/images/logo.svg](https://filamentphp.com/build/assets/rocket-0d392ed0.webp)" alt="Filament" height="50" style="margin-left: 20px;">
+  <img src="[https://tailwindcss.com/_next/static/media/tailwindcss-mark.1f65924cf7196c59e741ad5b4f43e3f1.svg](https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg)" alt="Tailwind CSS" height="50" style="margin-left: 20px;">
+</p>
 
 Selamat datang di aplikasi ini! Aplikasi ini dibangun menggunakan **Laravel 11**, **Filament** untuk admin panel, dan **Tailwind CSS** untuk styling front-end. Panduan ini akan membantu Anda untuk mengkloning dan menjalankan aplikasi ini di perangkat Anda.
 
