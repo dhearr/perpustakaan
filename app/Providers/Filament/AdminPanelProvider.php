@@ -28,6 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->font('Roboto')
+            ->favicon('images/icon-title.svg')
             ->login()
             ->registration()
             ->colors([

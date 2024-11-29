@@ -1,40 +1,40 @@
-# Laravel 11 + Filament + Tailwind CSS Application
+# **Library Application**
 
-Selamat datang di aplikasi ini! Aplikasi ini dibangun menggunakan **Laravel 11**, **Filament** untuk admin panel, dan **Tailwind CSS** untuk styling front-end. Panduan ini akan membantu Anda untuk mengkloning dan menjalankan aplikasi ini di perangkat Anda.
+Welcome to this application! This application is built using **Laravel 11**, **Filament** for the admin panel, and **Tailwind CSS** for front-end styling. This guide will help you to clone and run this application on your device.
 
-## Fitur
+## Features
 
--   **Framework Modern**: Dibangun menggunakan Laravel 11.
--   **Admin Panel**: Menggunakan Filament untuk manajemen data yang cepat dan mudah.
--   **Front-End Styling**: Menggunakan Tailwind CSS untuk desain yang modern dan responsif.
--   **Mudah Dikembangkan**: Struktur kode yang rapi dan mudah diadaptasi.
+-   **Modern Framework**: Built using Laravel 11.
+-   **Admin Panel**: Uses Filament for quick and easy data management.
+-   **Front-End Styling**: Uses Tailwind CSS for a modern and responsive design.
+-   **Easy to Develop**: Neat and adaptable code structure.
 
-## Persyaratan
+## Requirements
 
-Pastikan perangkat Anda telah memiliki:
+Make sure your device has:
 
--   **PHP** versi 8.2 atau lebih baru
--   **Composer** versi terbaru
--   **Node.js** dan **npm** (untuk build front-end)
--   **Database**: MySQL, PostgreSQL, atau database lain yang anda gunakan
+-   **PHP** version 8.2 or later
+-   **Composer** latest version
+-   **Node.js** and **npm** (for front-end builds)
+-   **Database**: MySQL, PostgreSQL, or any other database you use.
 
-## Cara Menjalankan Aplikasi
+## How to Run the Application
 
-Ikuti langkah-langkah berikut untuk menjalankan aplikasi ini di perangkat Anda:
+Follow these steps to run this app on your device:
 
 #### 1. Clone Repository
 
-Clone repository ini menggunakan perintah berikut:
+Clone this repository using the following command:
 
 ```bash
 git clone https://github.com/dhearr/perpustakaan.git
 ```
 
-Buka file yang baru saja anda clone tadi di code editor kesukaan anda.
+Open the file you just cloned in your favorite code editor.
 
-#### 2. Install Dependensi
+#### 2. Install Dependencies
 
-Jalankan perintah berikut untuk menginstal dependensi PHP:
+Run the following command to install PHP dependencies:
 
 ```bash
 composer install
@@ -44,42 +44,57 @@ composer install
 npm install
 ```
 
-#### 3. Konfigurasi File .env
+#### 3. Configure the `.env` File
 
-Salin file .env.example ke .env:
+Create a `.env` file in your root directory, then copy the `.env.example` file to the `.env` file:
 
 ```bash
-cp .env.example .env
+// File .env.example
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_name_database
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
 ```
 
-Sesuaikan konfigurasi database Anda di file .env.
+Customize your database configuration in the `.env` file.
 
-#### 4. Migrasi Database
+#### 4. Generate Application Key
 
-Jalankan migrasi untuk membuat tabel-tabel yang diperlukan:
+Run the following command to generate the application key:
+
+```bash
+php artisan key:generate
+```
+
+#### 5. Database Migration
+
+Run the migration to create the necessary tables:
 
 ```bash
 php artisan migrate
 ```
 
-#### 5. Build Asset Front-End
+#### 6. Build Front-End Asset
 
-Jalankan perintah berikut untuk membuild asset dengan Tailwind CSS:
+Run the following command to build the asset with Tailwind CSS:
 
 ```bash
 npm run dev
 ```
 
-#### 6. Jalankan Server
+#### 7. Run the Server
 
-Jalankan aplikasi menggunakan perintah:
+Run the application using the command:
 
 ```bash
 php artisan serve
 ```
 
-Akses aplikasi Anda di http://localhost:8000. Anda sudah dapat menggunakan aplikasi ini.
+Access your application at http://localhost:8000 or http://127.0.0.1:8000. You can already use this application.
 
-## Kontribusi
+## Contributions
 
-Kami menyambut kontribusi dari anda. Jika anda menemukan masalah atau memiliki ide untuk fitur baru, silakan buat issue atau ajukan pull request di repository ini.
+We welcome your contributions. If you find problems or have ideas for new features, please create an issue or submit a pull request in this repository.

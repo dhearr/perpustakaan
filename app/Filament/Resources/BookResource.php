@@ -20,12 +20,10 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteBulkAction;
 use App\Filament\Resources\BookResource\Pages\ListBooks;
-use App\Filament\Resources\BookResource\Pages\BookReport;
 
 class BookResource extends Resource
 {
     protected static ?string $model = Book::class;
-
     protected static ?string $recordTitleAttribute = 'title';
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
     protected static ?string $navigationGroup = 'Book Management';

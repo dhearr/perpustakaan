@@ -2,9 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\View\View;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use Filament\Support\Facades\FilamentView;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,5 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Blade::component('components.layout.layout', 'layout');
+        Blade::component('components.button.button', 'button');
     }
 }
