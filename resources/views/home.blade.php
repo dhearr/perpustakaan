@@ -46,11 +46,11 @@
         </div>
         <div class="relative mt-16 h-80 lg:mt-8">
             <img class="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
-                src="images/HERO_SECTION_1.png" alt="App screenshot" width="1824" height="1080">
+                src="images/section1.svg" alt="App screenshot" width="1824" height="1080">
         </div>
         <div class="hidden relative lg:flex mt-16 h-80 lg:mt-8">
             <img class="absolute left-0 top-[12em] w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
-                src="images/HERO_SECTION_2.png" alt="App screenshot" width="1824" height="1080">
+                src="images/section2.svg" alt="App screenshot" width="1824" height="1080">
         </div>
     </div>
 </x-layout>
