@@ -23,9 +23,5 @@ class AppServiceProvider extends ServiceProvider
     {
         Blade::component('components.layout.layout', 'layout');
         Blade::component('components.button.button', 'button');
-
-        if (env('APP_ENV') === 'production') {
-            URL::forceScheme('https');
-        }
     }
 }
