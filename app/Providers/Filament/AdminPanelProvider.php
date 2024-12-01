@@ -30,6 +30,7 @@ class AdminPanelProvider extends PanelProvider
             ->font('Roboto')
             ->favicon('images/icon-title.svg')
             ->login()
+            ->profile(isSimple: false)
             ->registration()
             ->colors([
                 'primary' => Color::Amber,

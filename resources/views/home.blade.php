@@ -21,7 +21,9 @@
                         class="opacity-0 group-hover:opacity-100 group-hover:ml-[7px] absolute top-0 left-0 transition-all ease-in-out duration-300">
                 </span><span class="group-hover:ml-[14px]">an</span>
             </h1>
-            <h2 class="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl">Boost your
+            <h2
+                class="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl transition-all ease-in-out duration-300">
+                Boost your
                 productivity, Start using our app today.</h2>
             <p class="mt-6 text-pretty text-sm sm:text-lg text-gray-300">This library application is designed to manage
                 <span class="font-semibold text-[rgb(59,130,246)]">book collections</span>, <span

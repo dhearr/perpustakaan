@@ -19,6 +19,7 @@ use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteBulkAction;
 use App\Filament\Resources\MemberResource\Pages\ListMembers;
+use App\Filament\Resources\MemberResource\Pages\CreateMember;
 
 class MemberResource extends Resource
 {
@@ -115,6 +116,7 @@ class MemberResource extends Resource
     {
         return [
             'index' => ListMembers::route('/'),
+            'create' => CreateMember::route('/create'),
         ];
     }
 }

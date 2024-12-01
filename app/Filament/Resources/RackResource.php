@@ -15,6 +15,7 @@ use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Tables\Actions\DeleteBulkAction;
 use App\Filament\Resources\RackResource\Pages\ListRacks;
+use App\Filament\Resources\RackResource\Pages\CreateRack;
 
 class RackResource extends Resource
 {
@@ -84,6 +85,7 @@ class RackResource extends Resource
     {
         return [
             'index' => ListRacks::route('/'),
+            'create' => CreateRack::route('/create'),
         ];
     }
 }

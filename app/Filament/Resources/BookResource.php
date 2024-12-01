@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Resources\BookResource\Pages\CreateBook;
 use stdClass;
 use App\Models\Book;
 use Filament\Forms\Form;
@@ -47,6 +48,7 @@ class BookResource extends Resource
                     ->relationship('rack', 'name')
                     ->nullable()
                     ->searchable()
+                    ->required()
                     ->preload(),
                 Select::make('status')
                     ->default('tersedia')
@@ -67,8 +69,8 @@ class BookResource extends Resource
                     static function (HasTable $livewire, stdClass $rowLoop): string {
                         return (string) (
                             $rowLoop->iteration +
-                            ($livewire->getTableRecordsPerPage() * (
-                                $livewire->getTablePage() - 1
+                            ((int) $livewire->getTableRecordsPerPage() * (
+                                (int) $livewire->getTablePage() - 1
                             ))
                         );
                     }
@@ -132,6 +134,7 @@ class BookResource extends Resource
     {
         return [
             'index' => ListBooks::route('/'),
+            'create' => CreateBook::route('/create')
         ];
     }
 }

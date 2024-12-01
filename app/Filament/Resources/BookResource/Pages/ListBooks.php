@@ -2,10 +2,10 @@
 
 namespace App\Filament\Resources\BookResource\Pages;
 
-use App\Filament\Resources\BookResource;
-use App\Filament\Resources\BookResource\Widgets\StatsOverview;
 use Filament\Actions\CreateAction;
+use App\Filament\Resources\BookResource;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\BookResource\Widgets\StatsOverview;
 
 class ListBooks extends ListRecords
 {
@@ -15,7 +15,7 @@ class ListBooks extends ListRecords
     {
         return [
             CreateAction::make()
-                ->icon('heroicon-o-plus')
+                ->icon('heroicon-o-plus'),
         ];
     }
 
