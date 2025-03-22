@@ -44,6 +44,12 @@ class BookResource extends Resource
                     ->required()
                     ->afterStateUpdated(fn($state, callable $set) => $set('publisher', Str::title($state))),
                 TextInput::make('publication_year')->required()->numeric(),
+                TextInput::make('qty')
+                    ->label('Jumlah Buku')
+                    ->required()
+                    ->numeric()
+                    ->minValue(1)
+                    ->default(1),
                 Select::make('rack_id')
                     ->relationship('rack', 'name')
                     ->nullable()
@@ -77,9 +83,8 @@ class BookResource extends Resource
                 )->sortable(),
                 TextColumn::make('title')->sortable()->searchable(),
                 TextColumn::make('writer')->sortable()->searchable(),
-                TextColumn::make('publisher')->sortable()->searchable(),
-                TextColumn::make('publication_year')->sortable()->searchable(),
                 TextColumn::make('rack.name')->sortable()->searchable(),
+                TextColumn::make('qty')->sortable()->searchable(),
                 BadgeColumn::make('status')
                     ->sortable()
                     ->searchable()

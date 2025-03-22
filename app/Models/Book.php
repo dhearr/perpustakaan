@@ -13,7 +13,7 @@ class Book extends Model
     use HasFactory;
 
     protected $table = 'books';
-    protected $fillable = ['title', 'writer', 'publisher', 'publication_year', 'status'];
+    protected $fillable = ['title', 'writer', 'publisher', 'publication_year','qty', 'status'];
     protected $attributes = ['status' => 'tersedia',];
 
     protected static function booted()
